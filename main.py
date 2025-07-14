@@ -78,7 +78,7 @@ if st.session_state["authentication_status"]:
     else:
         st.warning("🔐 Upgrade to premium to unlock exclusive picks.")
 
-elif auth_status is False:
+elif st.session_state["authentication_status"] is False:
     st.error("Invalid credentials")
-elif auth_status is None:
+elif st.session_state["authentication_status"] is None:
     st.warning("Enter your login details")
