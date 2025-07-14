@@ -27,8 +27,21 @@ authenticator = stauth.Authenticate(
     config["cookie"]["expiry_days"]
 )
 
-# The new, correct way to call the login function
-name, auth_status, username = authenticator.login()
+# This line now just renders the login form
+authenticator.login()
+
+# This block checks the session state to see if the user is logged in
+if st.session_state["authentication_status"]:
+    authenticator.logout('Logout', 'main')
+    st.write(f'Welcome *{st.session_state["name"]}*')
+    st.title('Some content')
+    # YOUR APP'S LOGIC GOES HERE
+
+elif st.session_state["authentication_status"] is False:
+    st.error('Username/password is incorrect')
+
+elif st.session_state["authentication_status"] is None:
+    st.warning('Please enter your username and password')
 
 if auth_status:
     authenticator.logout("Logout", "sidebar")
