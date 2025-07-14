@@ -1,0 +1,6 @@
+streamlit
+streamlit-authenticator
+PyYAML
+openai
+requests
+python-dotenv
