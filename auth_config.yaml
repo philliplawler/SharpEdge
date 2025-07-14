@@ -1,8 +1,8 @@
 credentials:
   usernames:
     premium:
-      name: PremiumUser
-      password: "$2b$12$uYmvkBGiT9V7YxuDeU6FaeSG.yB3zNCUWLMTPjxvclVxprdf9JoPG"
+      name: Premium
+      password: "123"
 cookie:
   name: sharpedge_cookie
   key: secret_key
